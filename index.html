@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Time app</title>
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      document.querySelector('#datetime').textContent = now.toLocaleString();
+    }
+
+    setInterval(updateDateTime, 1000);
+  </script>
 </head>
 <body>
-todo
+<span id="datetime"></span>
 </body>
 </html>
