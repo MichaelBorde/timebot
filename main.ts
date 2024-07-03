@@ -14,7 +14,7 @@ async function main() {
   async function start(ctx: CommandContext<Context>) {
     const keyboard = new Keyboard().webApp(
       "Open Time App",
-      "https://michaelborde.github.io/timebot"
+      "https://michaelborde.github.io/timebot-app"
     );
 
     await ctx.reply(

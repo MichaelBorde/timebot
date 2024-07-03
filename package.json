@@ -2,11 +2,11 @@
   "name": "timebot",
   "version": "1.0.0",
   "description": "",
-  "main": "bot/main.ts",
+  "main": "main.ts",
   "scripts": {
-    "configure": "ts-node bot/configure.ts",
-    "start": "ts-node bot/main.ts",
-    "dev": "ts-node-dev bot/main.ts",
+    "configure": "ts-node configure.ts",
+    "start": "ts-node main.ts",
+    "dev": "ts-node-dev main.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
