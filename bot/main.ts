@@ -17,6 +17,11 @@ async function main() {
       "https://michaelborde.github.io/timebot"
     );
 
-    await ctx.reply("Press to open the app", { reply_markup: keyboard });
+    await ctx.reply(
+      "Press button to open the app or just use t.me/MikeTimeBot/app.",
+      {
+        reply_markup: keyboard,
+      }
+    );
   }
 }
