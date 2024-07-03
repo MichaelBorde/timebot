@@ -1,9 +1,11 @@
-import { Bot, CommandContext, Context, Keyboard } from "grammy";
+import { Bot, CommandContext, Context, InlineKeyboard } from "grammy";
+
+const botToken = process.env.BOT_TOKEN || "";
 
 main().catch(console.error);
 
 async function main() {
-  const bot = new Bot(process.env.BOT_TOKEN || "", {
+  const bot = new Bot(botToken, {
     client: {
       environment: "test",
     },
@@ -12,16 +14,17 @@ async function main() {
   return bot.start();
 
   async function start(ctx: CommandContext<Context>) {
-    const keyboard = new Keyboard().webApp(
+    console.log(
+      `Start command received from ${JSON.stringify(
+        ctx.from
+      )} in ${JSON.stringify(ctx.chat)}`
+    );
+    const keyboard = new InlineKeyboard().url(
       "Open Time App",
-      "https://michaelborde.github.io/timebot-app"
+      "https://t.me/MikeTimeBot/app?startapp=debug"
     );
-
-    await ctx.reply(
-      "Press button to open the app or just use t.me/MikeTimeBot/app.",
-      {
-        reply_markup: keyboard,
-      }
-    );
+    return ctx.reply("Press button to open the app.", {
+      reply_markup: keyboard,
+    });
   }
 }
