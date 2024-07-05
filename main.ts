@@ -1,6 +1,8 @@
 import { Bot, CommandContext, Context, InlineKeyboard } from "grammy";
 
 const botToken = process.env.BOT_TOKEN || "";
+const appUrl =
+  process.env.APP_URL || "https://michaelborde.github.io/timebot-app";
 
 main().catch(console.error);
 
@@ -19,9 +21,9 @@ async function main() {
         ctx.from
       )} in ${JSON.stringify(ctx.chat)}`
     );
-    const keyboard = new InlineKeyboard().url(
+    const keyboard = new InlineKeyboard().webApp(
       "Open Time App",
-      "https://t.me/MikeTimeBot/app?startapp=debug"
+      `${appUrl}#tgWebAppStartParam=debug`
     );
     return ctx.reply("Press button to open the app.", {
       reply_markup: keyboard,
